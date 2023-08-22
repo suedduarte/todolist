@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color: #a19ff7;
+    --two-color: #A091FF;
+    --detail-color: #151515;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--detail-color);
+    padding: 0.6rem;
+}
+
+/* caixa */
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background-color: #1f1f1f;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 1.5rem;
+}
+
+/* título */
+.todo-app h2{
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+/* adicionar texto */
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ecebeb;
+    border-radius: 2rem;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 600;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: .5s ease;
+}
+
+button:hover{
+    background-color: #66a5c2;
+}
+
+/* lista */
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(img/uncheked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(img/checked.png);
+}
+
+/* deletar tarefa */
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+}
+
+/* redes sociais */
+.socialmedia .sci{
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+    position: fixed;
+    top: 32.5%;
+    right: 26%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci a{
+    list-style: none;
+    display: inline-block;
+    margin: .5rem 0;
+    transform: scale(0.6);
+}
+
+.sci a img{
+    width: 3.5rem;
+    transition: .5s ease;
+}
+
+.sci a img:hover{
+    transform: scale(1.2);
+}
+
+/* responsividade */
+@media(max-width: 724px){
+    input{
+        width: 3rem;
+    }
+
+    button{
+        padding: 10px 30px;
+    }
+    .socialmedia .sci{
+        background: transparent;
+        position: fixed;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:row;
+        top: 90%;
+        border-radius: 0;
+    }  
+}
